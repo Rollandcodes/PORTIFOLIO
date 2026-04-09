@@ -5,8 +5,10 @@ import { ArrowRight, Bot, Globe, Code2, Cpu, Rocket, Zap, TrendingUp } from "luc
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import MagneticButton from "@/components/MagneticButton";
+import Testimonials from "@/components/Testimonials";
 
 const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false });
+
 
 const stats = [
   { value: "3", label: "Revenue-generating products", icon: <Rocket size={16} className="text-accent" /> },
@@ -376,6 +378,9 @@ export default function Home() {
           </Link>
         </motion.div>
       </section>
+
+      {/* ─── TESTIMONIALS ───────────────────────────────────────────── */}
+      <Testimonials />
 
     </main>
   );
