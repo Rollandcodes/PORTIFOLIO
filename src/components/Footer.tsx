@@ -99,7 +99,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Rolland Muhanguzi. All rights reserved.
           </p>
           <a
-            href="/cv.pdf"
+            href="/Rolland_Muhanguzi_CV.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"

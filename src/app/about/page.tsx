@@ -84,7 +84,7 @@ export default function About() {
 
             <div className="mt-6">
               <a
-                href="/cv.pdf"
+                href="/Rolland_Muhanguzi_CV.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"

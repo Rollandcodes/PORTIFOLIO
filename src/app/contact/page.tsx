@@ -118,7 +118,7 @@ export default function Contact() {
 
             {/* CV download */}
             <a
-              href="/cv.pdf"
+              href="/Rolland_Muhanguzi_CV.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"

@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="flex items-center gap-4">
             <a
-              href="/cv.pdf"
+              href="/Rolland_Muhanguzi_CV.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -113,7 +113,7 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
-            <a href="/cv.pdf" download target="_blank" rel="noopener noreferrer" className="mt-4 px-8 py-3 rounded-full bg-accent text-black font-semibold text-sm">
+            <a href="/Rolland_Muhanguzi_CV.pdf" download target="_blank" rel="noopener noreferrer" className="mt-4 px-8 py-3 rounded-full bg-accent text-black font-semibold text-sm">
               Download CV
             </a>
           </motion.div>
