@@ -32,7 +32,7 @@ export default function Footer() {
         </a>
 
         <a 
-          href="mailto:roland@example.com" 
+          href="mailto:muhanguzirollands@gmail.com" 
           className="hover:text-accent transition-colors"
         >
           <Mail size={24} />

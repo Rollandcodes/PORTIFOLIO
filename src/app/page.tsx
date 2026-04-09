@@ -68,7 +68,7 @@ export default function Home() {
             <MagneticButton glow onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
               View My Work <ArrowRight size={18} />
             </MagneticButton>
-            <MagneticButton onClick={() => window.open("mailto:roland@example.com")}>
+            <MagneticButton onClick={() => window.open("mailto:muhanguzirollands@gmail.com")}>
               Contact Me
             </MagneticButton>
           </motion.div>
@@ -192,7 +192,7 @@ export default function Home() {
           <MagneticButton glow onClick={() => window.open("https://wa.me/905338425559")}>
             Chat on WhatsApp
           </MagneticButton>
-          <MagneticButton onClick={() => window.open("mailto:roland@example.com")}>
+          <MagneticButton onClick={() => window.open("mailto:muhanguzirollands@gmail.com")}>
             Email Me Instead
           </MagneticButton>
         </motion.div>

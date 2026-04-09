@@ -18,7 +18,7 @@ export default function Navbar() {
       <nav className="hidden md:flex items-center gap-8 glass px-8 py-3 rounded-full font-medium text-sm text-gray-300">
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-white transition-colors">Home</button>
         <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-white transition-colors">Work</button>
-        <button onClick={() => window.open("mailto:roland@example.com")} className="hover:text-white transition-colors">Contact</button>
+        <button onClick={() => window.open("mailto:muhanguzirollands@gmail.com")} className="hover:text-white transition-colors">Contact</button>
       </nav>
 
       <div className="flex items-center gap-4">
