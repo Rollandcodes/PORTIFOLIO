@@ -55,20 +55,24 @@ const projects = [
 
 const skillCategories = [
   {
-    cat: "Frontend",
-    skills: ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    cat: "Development",
+    color: "#10B981",
+    skills: ["Next.js 14", "React 18", "TypeScript", "Supabase", "PostgreSQL", "REST APIs"],
   },
   {
-    cat: "Backend",
-    skills: ["Node.js", "Supabase", "PostgreSQL", "REST APIs", "Webhooks"],
+    cat: "Design & No-Code",
+    color: "#6366F1",
+    skills: ["Webflow", "Framer", "Figma", "Canva", "UI/UX Design", "Responsive Layout"],
   },
   {
-    cat: "AI & ML",
-    skills: ["OpenAI API", "Claude API", "Whisper", "LangChain", "Vector DBs"],
+    cat: "AI & Automation",
+    color: "#F59E0B",
+    skills: ["OpenAI API", "Claude API", "Prompt Engineering", "n8n", "Make.com", "Whisper"],
   },
   {
-    cat: "Automation",
-    skills: ["n8n", "Make.com", "Zapier", "Twilio", "WhatsApp API"],
+    cat: "Business Systems",
+    color: "#EC4899",
+    skills: ["GoHighLevel", "CRM Setup", "WhatsApp API", "Lead Gen Systems", "Twilio", "Zapier"],
   },
 ];
 
@@ -223,13 +227,19 @@ export default function Work() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass rounded-2xl p-5 group hover:border-accent/20 transition-all duration-300"
+              className="glass rounded-2xl p-6 group hover:border-white/20 transition-all duration-300 relative overflow-hidden"
             >
-              <h4 className="text-xs font-mono tracking-widest uppercase text-accent mb-4">{cat.cat}</h4>
-              <ul className="space-y-2">
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{ background: `radial-gradient(ellipse at top left, ${cat.color}07, transparent 60%)` }}
+              />
+              <h4 className="text-xs font-mono tracking-widest uppercase mb-5 font-semibold" style={{ color: cat.color }}>
+                {cat.cat}
+              </h4>
+              <ul className="space-y-3 relative z-10">
                 {cat.skills.map(s => (
-                  <li key={s} className="text-gray-400 text-sm flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-accent/40 flex-shrink-0" />
+                  <li key={s} className="text-gray-400 text-sm flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: cat.color }} />
                     {s}
                   </li>
                 ))}

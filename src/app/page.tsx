@@ -6,9 +6,10 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import MagneticButton from "@/components/MagneticButton";
 import Testimonials from "@/components/Testimonials";
+import WhatIDo from "@/components/WhatIDo";
+import HowIHelp from "@/components/HowIHelp";
 
 const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false });
-
 
 const stats = [
   { value: "3", label: "Revenue-generating products", icon: <Rocket size={16} className="text-accent" /> },
@@ -22,26 +23,26 @@ const projects = [
     title: "CypAI",
     role: "Founder",
     icon: <Bot size={28} className="text-accent" />,
-    desc: "SaaS CRM + Automation Platform.",
+    desc: "SaaS CRM + AI chatbot that qualifies leads & books calls 24/7.",
     tags: ["Next.js", "OpenAI", "Supabase"],
   },
   {
     title: "Ostra Clips",
     role: "Lead Engineer",
     icon: <Globe size={28} className="text-accent" />,
-    desc: "AI video clipping & distribution tool.",
-    tags: ["AI", "Automation", "React"],
+    desc: "AI video pipeline that auto-cuts & distributes short-form clips.",
+    tags: ["AI", "Whisper", "React"],
   },
   {
     title: "PainPointRadar",
     role: "Solo Dev",
     icon: <Code2 size={28} className="text-accent" />,
-    desc: "AI-driven market research platform.",
-    tags: ["LLM", "Next.js", "n8n"],
+    desc: "AI market research tool scraping & ranking customer pain points.",
+    tags: ["Claude API", "Next.js", "n8n"],
   },
 ];
 
-// Floating dashboard card shown in the hero
+// Floating UI cards
 function FloatingDashCard() {
   return (
     <motion.div
@@ -82,7 +83,7 @@ function FloatingChatCard() {
       </div>
       <div className="space-y-2">
         <div className="bg-white/5 rounded-xl rounded-tl-none px-3 py-2 text-xs text-gray-300 max-w-[90%]">
-          Hey! I noticed you're looking for automation help 👋
+          Hey! I noticed you&apos;re looking for automation help 👋
         </div>
         <div className="bg-accent/10 border border-accent/20 rounded-xl rounded-tr-none px-3 py-2 text-xs text-accent ml-auto max-w-[80%]">
           Yes! Schedule a call?
@@ -100,14 +101,11 @@ export default function Home() {
   return (
     <main className="relative flex flex-col items-center overflow-x-hidden">
 
-      {/* ─── HERO ─────────────────────────────────────────────────── */}
+      {/* ─── HERO ───────────────────────────────────────────────── */}
       <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg">
         <Hero3D />
-
-        {/* Radial glow behind headline */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_60%,rgba(16,185,129,0.08),transparent)] pointer-events-none z-10" />
 
-        {/* Floating UI elements */}
         <FloatingChatCard />
         <FloatingDashCard />
 
@@ -136,11 +134,11 @@ export default function Home() {
             transition={{ duration: 0.9, delay: 0.4 }}
             className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 leading-[1.05]"
           >
-            <span className="text-white">I Build AI Systems</span>
+            <span className="text-white">I Build AI Systems,</span>
             <br />
-            <span className="text-white">That Make Businesses</span>
+            <span className="text-white">Websites & Automations</span>
             <br />
-            <span className="gradient-text-accent">Money While They Sleep.</span>
+            <span className="gradient-text-accent">That Grow Businesses.</span>
           </motion.h1>
 
           {/* Subtext */}
@@ -150,7 +148,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl font-light tracking-wide"
           >
-            AI SaaS &nbsp;·&nbsp; Automation Systems &nbsp;·&nbsp; Revenue Infrastructure
+            Webflow&nbsp;·&nbsp;Framer&nbsp;·&nbsp;AI Systems&nbsp;·&nbsp;GoHighLevel&nbsp;·&nbsp;SaaS Development
           </motion.p>
 
           {/* CTA buttons */}
@@ -162,12 +160,14 @@ export default function Home() {
           >
             <Link href="/work">
               <MagneticButton glow>
-                View Projects <ArrowRight size={17} />
+                View My Work <ArrowRight size={17} />
               </MagneticButton>
             </Link>
-            <MagneticButton onClick={() => window.open("https://wa.me/905338425559")}>
-              Contact on WhatsApp
-            </MagneticButton>
+            <Link href="/contact">
+              <MagneticButton>
+                Contact Me
+              </MagneticButton>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -187,7 +187,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ─── TRUST STRIP ──────────────────────────────────────────── */}
+      {/* ─── TRUST STRIP ─────────────────────────────────────────── */}
       <section className="w-full py-16 border-y border-white/[0.06] bg-white/[0.015] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-gray-600 text-xs font-semibold tracking-[0.3em] uppercase mb-10">
@@ -211,6 +211,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ─── WHAT I DO ────────────────────────────────────────────── */}
+      <WhatIDo />
 
       {/* ─── PROJECTS PREVIEW ─────────────────────────────────────── */}
       <section className="w-full max-w-7xl mx-auto py-32 px-6">
@@ -260,7 +263,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── HOW I THINK ──────────────────────────────────────────── */}
+      {/* ─── HOW I HELP BUSINESSES ────────────────────────────────── */}
+      <HowIHelp />
+
+      {/* ─── HOW I THINK ─────────────────────────────────────────── */}
       <section className="w-full py-32 px-6 border-t border-white/[0.06] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(16,185,129,0.04),transparent)] pointer-events-none" />
         <div className="max-w-5xl mx-auto">
@@ -275,7 +281,6 @@ export default function Home() {
             <p className="text-gray-500 text-lg">Every project follows one objective: Revenue.</p>
           </motion.div>
 
-          {/* Flow diagram */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 relative">
             {[
               { step: "01", label: "Problem", desc: "Identify the exact bottleneck costing the business money or time." },
@@ -291,7 +296,6 @@ export default function Home() {
                 transition={{ delay: i * 0.15 }}
                 className="relative flex flex-col items-start md:items-center text-center"
               >
-                {/* Connector line */}
                 {i < 3 && (
                   <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-gradient-to-r from-accent/30 to-transparent" />
                 )}
@@ -306,27 +310,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── MARQUEE ──────────────────────────────────────────────── */}
+      {/* ─── MARQUEE ─────────────────────────────────────────────── */}
       <section className="w-full py-8 border-y border-white/[0.06] overflow-hidden">
         <div className="flex w-max animate-marquee items-center gap-16 px-8">
           {[...Array(3)].map((_, gi) => (
             <div key={gi} className="flex items-center gap-16 text-gray-700">
-              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Cpu size={14} /> CypAI SaaS</span>
+              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Cpu size={14} /> Webflow</span>
               <span className="text-gray-800">✦</span>
-              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Rocket size={14} /> Ostra Clips</span>
+              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Zap size={14} /> Framer</span>
               <span className="text-gray-800">✦</span>
-              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Zap size={14} /> PainPointRadar</span>
+              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Bot size={14} /> GoHighLevel</span>
               <span className="text-gray-800">✦</span>
-              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Bot size={14} /> AI Automations</span>
+              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Code2 size={14} /> Next.js</span>
               <span className="text-gray-800">✦</span>
-              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Globe size={14} /> SMB Web Systems</span>
+              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Globe size={14} /> Figma</span>
+              <span className="text-gray-800">✦</span>
+              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><Rocket size={14} /> n8n</span>
+              <span className="text-gray-800">✦</span>
+              <span className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap"><TrendingUp size={14} /> OpenAI</span>
               <span className="text-gray-800">✦</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ─── CTA ──────────────────────────────────────────────────── */}
+      {/* ─── TESTIMONIALS ────────────────────────────────────────── */}
+      <Testimonials />
+
+      {/* ─── CTA ─────────────────────────────────────────────────── */}
       <section className="w-full py-40 px-6 flex flex-col items-center text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(16,185,129,0.07),transparent)] pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-accent/[0.06] pointer-events-none" />
@@ -338,7 +349,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-accent text-sm font-mono tracking-widest uppercase mb-6"
         >
-          Let's Build Together
+          Let&apos;s Build Together
         </motion.p>
 
         <motion.h2
@@ -347,8 +358,8 @@ export default function Home() {
           viewport={{ once: true }}
           className="font-display text-5xl md:text-7xl font-bold text-white mb-6 max-w-3xl leading-tight relative z-10"
         >
-          Let's Build Something That{" "}
-          <span className="gradient-text-accent">Prints Money.</span>
+          Let&apos;s Build Systems That{" "}
+          <span className="gradient-text-accent">Actually Grow Your Business.</span>
         </motion.h2>
 
         <motion.p
@@ -358,7 +369,7 @@ export default function Home() {
           transition={{ delay: 0.15 }}
           className="text-gray-500 text-lg mb-12 max-w-xl relative z-10"
         >
-          Whether you need an AI automation, a SaaS product, or a site that converts — I&apos;ll build it to generate real ROI.
+          Whether you need a Webflow site, a GoHighLevel CRM, an AI automation, or a full SaaS — I&apos;ll build it to generate real ROI.
         </motion.p>
 
         <motion.div
@@ -373,14 +384,11 @@ export default function Home() {
           </MagneticButton>
           <Link href="/contact">
             <MagneticButton>
-              Send a Message
+              Send an Email
             </MagneticButton>
           </Link>
         </motion.div>
       </section>
-
-      {/* ─── TESTIMONIALS ───────────────────────────────────────────── */}
-      <Testimonials />
 
     </main>
   );
