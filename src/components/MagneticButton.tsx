@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -9,7 +9,7 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
   className?: string;
   glow?: boolean;
