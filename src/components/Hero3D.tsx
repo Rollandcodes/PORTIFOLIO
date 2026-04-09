@@ -5,15 +5,15 @@ import React, { useRef, useMemo, Component, ErrorInfo, ReactNode } from "react";
 import * as THREE from "three";
 import { Float, Points, PointMaterial } from "@react-three/drei";
 
-class ErrorBoundary extends Component<{children: ReactNode, fallback: ReactNode}, {hasError: boolean}> {
+class ErrorBoundary extends Component<any, any> {
   state = { hasError: false };
   static getDerivedStateFromError() { return { hasError: true }; }
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.warn("WebGL or Canvas failed to initialize:", error.message);
   }
   render() {
-    if (this.state.hasError) return this.props.fallback;
-    return this.props.children;
+    if (this.state.hasError) return (this as any).props.fallback;
+    return (this as any).props.children;
   }
 }
 
@@ -29,7 +29,7 @@ function ParticleCloud() {
     return p;
   }, [count]);
 
-  useFrame((state, delta) => {
+  useFrame((state: any, delta: number) => {
     if (ref.current) {
       ref.current.rotation.x -= delta * 0.05;
       ref.current.rotation.y -= delta * 0.07;
@@ -54,7 +54,7 @@ function ParticleCloud() {
 function FloatingShape() {
   const meshRef = useRef<THREE.Mesh>(null);
 
-  useFrame((state) => {
+  useFrame((state: any) => {
     const t = state.clock.getElapsedTime();
     if (meshRef.current) {
       meshRef.current.rotation.y = Math.sin(t / 2) * 0.5;
