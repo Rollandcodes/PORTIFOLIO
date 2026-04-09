@@ -189,7 +189,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-6 z-10"
         >
-          <MagneticButton glow onClick={() => window.open("https://wa.me/YOURNUMBER")}>
+          <MagneticButton glow onClick={() => window.open("https://wa.me/905338425559")}>
             Chat on WhatsApp
           </MagneticButton>
           <MagneticButton onClick={() => window.open("mailto:roland@example.com")}>
